@@ -1,0 +1,5 @@
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DomainEntities\bin\Debug\SolutionX.DomainEntities.dll
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DomainEntities\bin\Debug\SolutionX.DomainEntities.pdb
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DomainEntities\obj\Debug\SolutionX.DomainEntities.csproj.CoreCompileInputs.cache
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DomainEntities\obj\Debug\SolutionX.DomainEntities.dll
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DomainEntities\obj\Debug\SolutionX.DomainEntities.pdb

@@ -1,0 +1,25 @@
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\obj\Debug\SolutionX.BussinesLayer.csprojAssemblyReference.cache
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\obj\Debug\SolutionX.BussinesLayer.csproj.CoreCompileInputs.cache
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\bin\Debug\SolutionX.BussinesLayer.dll
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\bin\Debug\SolutionX.BussinesLayer.pdb
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\bin\Debug\SolutionX.DataAccess.dll
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\bin\Debug\SolutionX.DomainEntities.dll
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\bin\Debug\SolutionX.DataAccess.pdb
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\bin\Debug\SolutionX.DomainEntities.pdb
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\obj\Debug\SolutionX.BussinesLayer.csproj.CopyComplete
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\obj\Debug\SolutionX.BussinesLayer.dll
+C:\Users\2D\Source\Repos\SupportX2\SolutionX.BussinesLayer\obj\Debug\SolutionX.BussinesLayer.pdb
+C:\Users\2D\source\repos\SupportX2\SolutionX.BussinesLayer\bin\Debug\SolutionX.dll
+C:\Users\2D\source\repos\SupportX2\SolutionX.BussinesLayer\bin\Debug\SolutionX.pdb
+C:\Users\2D\source\repos\SupportX2\SolutionX.BussinesLayer\bin\Debug\SolutionX.dll.config
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\obj\Debug\SolutionX.BussinesLayer.csprojAssemblyReference.cache
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\obj\Debug\SolutionX.BussinesLayer.csproj.CoreCompileInputs.cache
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\obj\Debug\SolutionX.BussinesLayer.dll
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\obj\Debug\SolutionX.BussinesLayer.pdb
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\bin\Debug\SolutionX.BussinesLayer.dll
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\bin\Debug\SolutionX.BussinesLayer.pdb
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\bin\Debug\SolutionX.DataAccess.dll
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\bin\Debug\SolutionX.DomainEntities.dll
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\bin\Debug\SolutionX.DataAccess.pdb
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\bin\Debug\SolutionX.DomainEntities.pdb
+C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.BussinesLayer\obj\Debug\SolutionX.BussinesLayer.csproj.CopyComplete
