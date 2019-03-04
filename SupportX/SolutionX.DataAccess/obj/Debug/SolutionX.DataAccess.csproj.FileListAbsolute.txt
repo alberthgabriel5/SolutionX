@@ -16,3 +16,12 @@ C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DataAccess\bin\De
 C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DataAccess\bin\Debug\SolutionX.DomainEntities.dll
 C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DataAccess\bin\Debug\SolutionX.DomainEntities.pdb
 C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DataAccess\obj\Debug\SolutionX.DataAccess.csproj.CopyComplete
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DataAccess\bin\Debug\SolutionX.DataAccess.dll
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DataAccess\bin\Debug\SolutionX.DataAccess.pdb
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DataAccess\bin\Debug\SolutionX.DomainEntities.dll
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DataAccess\bin\Debug\SolutionX.DomainEntities.pdb
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DataAccess\obj\Debug\SolutionX.DataAccess.csprojAssemblyReference.cache
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DataAccess\obj\Debug\SolutionX.DataAccess.csproj.CoreCompileInputs.cache
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DataAccess\obj\Debug\SolutionX.DataAccess.csproj.CopyComplete
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DataAccess\obj\Debug\SolutionX.DataAccess.dll
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DataAccess\obj\Debug\SolutionX.DataAccess.pdb

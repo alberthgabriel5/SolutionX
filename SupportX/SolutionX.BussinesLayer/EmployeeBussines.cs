@@ -12,7 +12,8 @@ namespace SolutionX.BussinesLayer
     {
 
         EmployeeDataAccess employeeData = new EmployeeDataAccess();
-        public string VerifyUser(Employee employee)
+
+        public Employee VerifyUser(Employee employee)
         {
           return employeeData.VerifyUser(employee);
 

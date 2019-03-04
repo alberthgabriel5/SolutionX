@@ -9,7 +9,7 @@ using SolutionX.DomainEntities;
 
 namespace SolutionX.DataAccess
 {
-   public class PriorityDataAccess
+    public class PriorityDataAccess
     {
         List<Priority> priorityList = new List<Priority>();
         public List<Priority> ListPriority()
@@ -28,13 +28,16 @@ namespace SolutionX.DataAccess
                 while (reader.Read())
                 {
 
-                    Priority priority = new Priority();
-                    priority.idPriority = Convert.ToInt32(reader["idPriority"].ToString());
-                    priority.namePriority = reader["namePriority"].ToString();
+                    Priority priority = new Priority()
+                    {
+                        idPriority = Convert.ToInt32(reader["idPriority"].ToString()),
+                        namePriority = reader["namePriority"].ToString()
+                    };
                     priorityList.Add(priority);
                 }
-                return priorityList;
                 connectionSupportX.Close();
+                return priorityList;
+
             }
 
         }

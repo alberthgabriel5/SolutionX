@@ -13,7 +13,7 @@ namespace SolutionX
         {
             Session.Clear();
             Session.Abandon();
-            Response.Redirect("../login.aspx");
+            Response.Redirect("./login/login.aspx");
         }
     }
 }

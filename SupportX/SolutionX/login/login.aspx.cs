@@ -34,41 +34,55 @@ namespace SolutionX.login
             customer.nickName = username.Value;
             customer.pass = password.Value;
 
-            string aux = employeeBussines.VerifyUser(employee);
-            Session["userName"] = employee;
-            Console.WriteLine(aux);
-            switch (aux) {
-                case "Super Admin":
-                    Session["userName"] = employee;
-                    Response.Redirect("../viewAdmSuper.aspx");
-                    break;
-                case "Admin":
-                    Session["userName"] = employee;
-                    Response.Redirect("../viewAdm.aspx");
-                    break;
-                case "Manager Desktop":
-                    Session["userName"] = employee;
-                    Response.Redirect("../viewCoordinatorTable.aspx");
-                    break;
-                case "Manager":
-                    Session["userName"] = employee;
-                    Response.Redirect("../viewCoordinator.aspx");
-                    break;
-                case "Funtionary":
-                    Session["userName"] = employee;
-                    Response.Redirect("../viewEmployee.aspx");
-                    break;
-                case "Does not exists this role":
-                    
-                    string answer = customerBussines.VerifyCustomer(customer);
-                    if (answer.Equals("Login Successful"))
+            employee = employeeBussines.VerifyUser(employee);
+            if (employee.id != -5)
+            {
+                Session["id"] = employee.id;                
+                Session["Name"] = employee.name;
+                Session["LastName"] = employee.lastName;
+                Session["userName"] = employee.nickName;
+                Session["pass"] = employee.pass;
+                Console.WriteLine(employee.Role.roleName);
+                switch (employee.Role.idRole) {
+                    case 1:
+                        Session["userName"] = employee;
+                        Response.Redirect("../viewAdmSuper.aspx");
+                        break;
+                    case 2:
+                        Session["userName"] = employee;
+                        Response.Redirect("../viewAdm.aspx");
+                        break;
+                    case 3:
+                        Session["userName"] = employee;
+                        Response.Redirect("../viewCoordinatorTable.aspx");
+                        break;
+                    case 4:
+                        Session["userName"] = employee;
+                        Response.Redirect("../viewCoordinator.aspx");
+                        break;
+                    case 5:
+                        Session["userName"] = employee;
+                        Response.Redirect("../viewEmployee.aspx");
+                        break;
+                    default:
+                        Response.Write("Login Failed");
+                        Response.Redirect("login.aspx");
+                        break;
+                }
+            } 
+            else { 
+            customer = customerBussines.VerifyCustomer(customer);
+                    if (customer.id != -5)
                     {
-                        //Session["userName"] = username.Value.ToString();
-                        //Session["password"] = password.Value.ToString();
-                        loginUser.userLogin= username.Value.ToString();
-                        loginUser.passwordLogin = password.Value.ToString();
+                    Session["id"] = customer.id;
+                    Session["Name"] = customer.name;
+                    Session["LastName"] = customer.lastName;
+                    Session["userName"] = customer.nickName;
+                    Session["pass"] = customer.pass;
+                    //loginUser.userLogin= username.Value.ToString();
+                    //    loginUser.passwordLogin = password.Value.ToString();
 
-                        Response.Redirect("../viewClient.aspx");
+                    Response.Redirect("../ViewClient.aspx");
 
                         
                     }
@@ -76,10 +90,6 @@ namespace SolutionX.login
                         Response.Write("Login Failed");
                         Response.Redirect("login.aspx");
                     }
-                    break;
-                default:
-                    //Response.Redirect("./login.aspx");
-                    break;
             }
         }
         

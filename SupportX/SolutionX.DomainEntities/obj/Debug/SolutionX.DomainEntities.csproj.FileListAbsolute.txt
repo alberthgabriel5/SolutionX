@@ -3,3 +3,9 @@ C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DomainEntities\bi
 C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DomainEntities\obj\Debug\SolutionX.DomainEntities.csproj.CoreCompileInputs.cache
 C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DomainEntities\obj\Debug\SolutionX.DomainEntities.dll
 C:\Users\COREi3\Documents\Proyecto Analisis\SupportX\SolutionX.DomainEntities\obj\Debug\SolutionX.DomainEntities.pdb
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DomainEntities\bin\Debug\SolutionX.DomainEntities.dll
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DomainEntities\bin\Debug\SolutionX.DomainEntities.pdb
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DomainEntities\obj\Debug\SolutionX.DomainEntities.csprojAssemblyReference.cache
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DomainEntities\obj\Debug\SolutionX.DomainEntities.csproj.CoreCompileInputs.cache
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DomainEntities\obj\Debug\SolutionX.DomainEntities.dll
+C:\Respaldo\UCR\Analisis y Diseño de Sistemas 2019\SupportX\SupportX\SolutionX.DomainEntities\obj\Debug\SolutionX.DomainEntities.pdb

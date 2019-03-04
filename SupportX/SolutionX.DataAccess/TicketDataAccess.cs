@@ -14,23 +14,31 @@ namespace SolutionX.DataAccess
     {
         List<Ticket> ticketsList = new List<Ticket>();
 
-        public void CreateTicket(Ticket ticket)
+        public String CreateTicket(Ticket ticket)
         {
+            String answer = "DB Conection Failed";
 
             SqlConnection connectionSupportX = DataAccess.GetSqlConnectionSupportX();
 
-
+            SqlDataReader reader;
             using (SqlCommand cmd = new SqlCommand("sp_insert_ticket", connectionSupportX))
             {
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@description", ticket.description);
-                cmd.Parameters.AddWithValue("@idCostumer", ticket.idCustomer);
+                cmd.Parameters.AddWithValue("@idCustomer", ticket.idCustomer);
 
                 connectionSupportX.Open();
-                cmd.ExecuteNonQuery();
-                connectionSupportX.Close();
+                reader = cmd.ExecuteReader();
+                //cmd.ExecuteNonQuery();
+                
+                while (reader.Read())
+                {
+                    answer=reader["answer"].ToString();
+                }
 
+                    connectionSupportX.Close();
 
+                return answer;
             }
 
         }
@@ -48,16 +56,16 @@ namespace SolutionX.DataAccess
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Ticket ticket = new Ticket();
-                    ticket.idCode = Convert.ToInt32(reader["idCode"].ToString());
-                    ticket.description = reader["description"].ToString();
-                    ticket.priority = Convert.ToInt32(reader["idPriority"].ToString());
-                    ticket.dateCreate = Convert.ToDateTime(reader["datecreate"].ToString());
-                    ticket.idCategory = Convert.ToInt32(reader["idCategory"].ToString());
-                    ticket.idCustomer = Convert.ToInt32(reader["idCostumer"].ToString());
-                    ticket.idCoordinator = Convert.ToInt32(reader["idCordinator"].ToString());
-                    ticket.idEmployee = Convert.ToInt32(reader["idEmployee"].ToString());
-
+                    Ticket ticket = new Ticket() {
+                    idCode = Convert.ToInt32(reader["idCode"].ToString()),
+                    description = reader["description"].ToString(),
+                    priority = Convert.ToInt32(reader["idPriority"].ToString()),
+                    dateCreate = Convert.ToDateTime(reader["datecreate"].ToString()),
+                    idCategory = Convert.ToInt32(reader["idCategory"].ToString()),
+                    idCustomer = Convert.ToInt32(reader["idCustomer"].ToString()),
+                    idCoordinator = Convert.ToInt32(reader["idCordinator"].ToString()),
+                    idEmployee = Convert.ToInt32(reader["idEmployee"].ToString())
+                };
                     ticketsList.Add(ticket);
                 }
                 connectionSupportX.Close();
@@ -83,7 +91,7 @@ namespace SolutionX.DataAccess
                     ticket.priority = Convert.ToInt32(reader["idPriority"].ToString());
                     ticket.dateCreate = Convert.ToDateTime(reader["datecreate"].ToString());
                     ticket.idCategory = Convert.ToInt32(reader["idCategory"].ToString());
-                    ticket.idCustomer = Convert.ToInt32(reader["idCostumer"].ToString());
+                    ticket.idCustomer = Convert.ToInt32(reader["idCustomer"].ToString());
                     ticket.idCoordinator = Convert.ToInt32(reader["idCordinator"].ToString());
                     ticket.idEmployee = Convert.ToInt32(reader["idEmployee"].ToString());
 
@@ -139,16 +147,15 @@ namespace SolutionX.DataAccess
                 while (reader.Read())
                 {
 
-                    Ticket ticket = new Ticket();
-                    ticket.idCode = Convert.ToInt32(reader["idCode"].ToString());
-                    ticket.description = reader["description"].ToString();
-
-                    ticket.priority = reader["idPriority"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idPriority"].ToString());
-                    ticket.idCategory = reader["idCategory"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idCategory"].ToString());
-                    ticket.idCustomer = Convert.ToInt32(reader["idCustomer"].ToString());
-                    ticket.idCoordinator = reader["idCoordinator"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idCoordinator"].ToString());
-                    ticket.idEmployee = reader["idEmployee"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idEmployee"].ToString());
-
+                    Ticket ticket = new Ticket() {
+                        idCode = Convert.ToInt32(reader["idCode"].ToString()),
+                        description = reader["description"].ToString(),
+                        priority = reader["idPriority"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idPriority"].ToString()),
+                        idCategory = reader["idCategory"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idCategory"].ToString()),
+                        idCustomer = Convert.ToInt32(reader["idCustomer"].ToString()),
+                    idCoordinator = reader["idCoordinator"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idCoordinator"].ToString()),
+                    idEmployee = reader["idEmployee"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idEmployee"].ToString())
+                };
                     ticketsList.Add(ticket);
 
                 }
@@ -172,15 +179,13 @@ namespace SolutionX.DataAccess
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-
-                    Ticket ticket = new Ticket();
-                    ticket.idCode = Convert.ToInt32(reader["idCode"].ToString());
-                    ticket.description = reader["description"].ToString();
-
-                    ticket.idCustomer = Convert.ToInt32(reader["idCustomer"].ToString());
-                    ticket.idCoordinator = reader["idCoordinator"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idCoordinator"].ToString());
-                    ticket.idEmployee = reader["idEmployee"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idEmployee"].ToString());
-
+                    Ticket ticket = new Ticket() {
+                    idCode = Convert.ToInt32(reader["idCode"].ToString()),
+                    description = reader["description"].ToString(),
+                    idCustomer = Convert.ToInt32(reader["idCustomer"].ToString()),
+                    idCoordinator = reader["idCoordinator"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idCoordinator"].ToString()),
+                    idEmployee = reader["idEmployee"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idEmployee"].ToString())
+                };
                     ticketsList.Add(ticket);
 
                 }

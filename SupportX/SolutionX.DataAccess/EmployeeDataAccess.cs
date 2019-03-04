@@ -10,9 +10,10 @@ namespace SolutionX.DataAccess
 {
     public class EmployeeDataAccess
     {
-        List<Employee> employeeList = new List<Employee>();
+        
         List<Ticket> ticketsList = new List<Ticket>();
-        public string VerifyUser(Employee employee)
+
+        public Employee VerifyUser(Employee employee)
         {
 
             SqlConnection connectionEmployee = DataAccess.GetSqlConnectionEmployee();
@@ -31,9 +32,9 @@ namespace SolutionX.DataAccess
                 while (reader.Read())
                 {
                     employee.id = Convert.ToInt32(reader["idEmployee"].ToString());
+
                 }
-                if (employee.id != -5)
-                {
+                
                     SqlConnection connectionSupportX = DataAccess.GetSqlConnectionSupportX();
                     SqlDataReader readerSupportX;
                     using (SqlCommand cmdSupportX = new SqlCommand("sp_select_employee_id", connectionSupportX))
@@ -56,40 +57,40 @@ namespace SolutionX.DataAccess
                             employee.Role.roleName = readerSupportX["roleName"].ToString();
 
                         }
-                        string roleEmployee = employee.Role.roleName;
-                        Console.WriteLine("ROL DE EMPLEADO " + roleEmployee);
-                        switch (roleEmployee)
-                        {
-                            case "Super Admin":
-                                return "Super Admin";
-                                break;
-                            case "Admin":
-                                return "Admin";
-                                break;
-                            case "Manager Desktop":
-                                return "Manager Desktop";
-                                break;
-                            case "Manager":
-                                return "Manager";
-                                break;
-                            case "Funtionary":
-                                return "Funtionary";
-                                break;
+                        //string roleEmployee = employee.Role.roleName;
+                        //Console.WriteLine("ROL DE EMPLEADO " + roleEmployee);
+                        //switch (roleEmployee)
+                        //{
+                        //    case "Super Admin":
+                        //        return "Super Admin";
+                        //        break;
+                        //    case "Admin":
+                        //        return "Admin";
+                        //        break;
+                        //    case "Manager Desktop":
+                        //        return "Manager Desktop";
+                        //        break;
+                        //    case "Manager":
+                        //        return "Manager";
+                        //        break;
+                        //    case "Funtionary":
+                        //        return "Funtionary";
+                        //        break;
 
-                            default:
-                                connectionSupportX.Close();
-                                return "Does not exists this role";
+                        //    default:
+                        //        connectionSupportX.Close();
+                        //        return "Does not exists this role";
                                 
-                        }
+                        //}
                         
-                    }
+                    
                 }
             }
             Console.WriteLine("Resultado de vaaaaaaalorrrrrrrr: " + employee.id);
 
             connectionEmployee.Close();
 
-            return "Does not exists this role";
+            return employee;
 
         }
 
@@ -120,19 +121,21 @@ namespace SolutionX.DataAccess
                 cmd.ExecuteNonQuery();
 
                 reader = cmd.ExecuteReader();
-                
+                List<Employee> employeeList = new List<Employee>();
                 while (reader.Read())
                 {
-                    Employee employee = new Employee();
-                    employee.id = Convert.ToInt32(reader["idEmployee"].ToString());
-                    employee.name = reader["nameEmployee"].ToString();
-                    employee.lastName = reader["lastName"].ToString();
-
+                    Employee employee = new Employee()
+                    {
+                        id = Convert.ToInt32(reader["idEmployee"].ToString()),
+                        name = reader["nameEmployee"].ToString(),
+                        lastName = reader["lastName"].ToString()
+                    };
                     employeeList.Add(employee);
 
                 }
-                return employeeList;
                 connectionSupportX.Close();
+                return employeeList;
+                
             }
         }
 
@@ -147,12 +150,14 @@ namespace SolutionX.DataAccess
                 connectionSupportX.Open();
                 cmd.ExecuteNonQuery();
                 reader = cmd.ExecuteReader();
+                List<Employee> employeeList = new List<Employee>();
                 while (reader.Read())
                 {
-                    Employee employee = new Employee();
-                    employee.id = Convert.ToInt32(reader["idEmployee"].ToString());
-                    employee.name = reader["nameEmployee"].ToString();
-                    employee.lastName = reader["lastName"].ToString();
+                    Employee employee = new Employee() {
+                    id = Convert.ToInt32(reader["idEmployee"].ToString()),
+                    name = reader["nameEmployee"].ToString(),
+                    lastName = reader["lastName"].ToString()
+                };
                     employeeList.Add(employee);
                 }
                 connectionSupportX.Close();
@@ -175,14 +180,14 @@ namespace SolutionX.DataAccess
                 while (reader.Read())
                 {
 
-                    Ticket ticket = new Ticket();
-                    ticket.idCode = Convert.ToInt32(reader["idCode"].ToString());
-                    ticket.description = reader["description"].ToString();
-
-                    ticket.idCustomer = Convert.ToInt32(reader["idCustomer"].ToString());
-                    ticket.idCoordinator = reader["idCoordinator"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idCoordinator"].ToString());
-                    ticket.idEmployee = reader["idEmployee"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idEmployee"].ToString());
-
+                    Ticket ticket = new Ticket()
+                    {
+                        idCode = Convert.ToInt32(reader["idCode"].ToString()),
+                        description = reader["description"].ToString(),
+                        idCustomer = Convert.ToInt32(reader["idCustomer"].ToString()),
+                        idCoordinator = reader["idCoordinator"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idCoordinator"].ToString()),
+                        idEmployee = reader["idEmployee"] == System.DBNull.Value ? default(int) : Convert.ToInt32(reader["idEmployee"].ToString())
+                    };
                     ticketsList.Add(ticket);
 
                 }

@@ -10,13 +10,13 @@ namespace SolutionX.DataAccess
 {
    public  class CustomerDataAcces
     {
-        public string VerifyUser(Customer customer)
+        public Customer VerifyUser(Customer customer)
         {
             SqlConnection connectionCustomer = DataAccess.GetSqlConnectionCustomer();
             SqlDataReader reader;
             using (SqlCommand cmd = new SqlCommand("sp_user_exists", connectionCustomer))
             {
-                 
+                customer.id = -5;
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@user", customer.nickName);
@@ -28,13 +28,10 @@ namespace SolutionX.DataAccess
                 while (reader.Read())
                 {
                     customer.id = Convert.ToInt32(reader["idEmployee"].ToString());
+                    customer.name = reader["nameEmployee"].ToString();
+                    customer.lastName = reader["lastName"].ToString();
                 }
-                if (customer.id != -5)
-                {
-                    return "Login Successful";
-                }
-                else
-                    return "Login Failed";
+                return customer;
 
             }
         }
