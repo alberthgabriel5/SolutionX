@@ -11,7 +11,8 @@ namespace SolutionX.BussinesLayer
     public class CustomerBussines
     {
         CustomerDataAcces customerData = new CustomerDataAcces();
-        public string VerifyCustomer(Customer customer) {
+
+        public Customer VerifyCustomer(Customer customer) {
             return customerData.VerifyUser(customer);
         }
         public Customer returnCustomer(Customer customer) {

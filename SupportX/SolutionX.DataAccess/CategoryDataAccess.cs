@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SolutionX.DataAccess
 {
-   public class CategoryDataAccess
+    public class CategoryDataAccess
     {
 
         List<Category> categoryList = new List<Category>();
@@ -43,14 +43,17 @@ namespace SolutionX.DataAccess
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    
-                    Category category = new Category();
-                    category.idCategory = Convert.ToInt32(reader["idCategory"].ToString());
-                    category.name= reader["name"].ToString();
+
+                    Category category = new Category()
+                    {
+                        idCategory = Convert.ToInt32(reader["idCategory"].ToString()),
+                        name = reader["name"].ToString()
+                    };
                     categoryList.Add(category);
                 }
-                return categoryList;
                 connectionSupportX.Close();
+                return categoryList;
+
             }
 
         }

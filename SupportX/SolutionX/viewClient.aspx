@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="viewClient.aspx.cs" Inherits="SolutionX.viewClient" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="viewClient.aspx.cs" Inherits="SolutionX.ViewClient" %>
 
 <!doctype html>
 <html lang="en">
@@ -121,6 +121,8 @@
                                 <!-- layer 1 -->
                                 <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
                                     <h2 class="title1">Welcome!</h2>
+                                    <br />
+                                    <asp:Label ID="lblName" CssClass="h2" runat="server" Text=""></asp:Label>
                                 </div>
                                 <!-- layer 2 
                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
@@ -181,11 +183,12 @@
                             <div class="section-headline text-center">
                                 <h2>Create ticket</h2>
                                 <h3>Description</h3>
-                                <textarea id="txDesc" cols="20" rows="2" runat="server"></textarea>
+                                <textarea id="txDesc" class="form-control" cols="20" rows="2" runat="server"></textarea>
+                                <br />
+                                <asp:Label ID="lblAnswer"  runat="server" Text=""></asp:Label>
                                 <br />
                                 <br />
-                                <br />
-                                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Create" />
+                                <asp:Button ID="Button1" runat="server" CssClass="btn-primary" OnClick="Button1_Click" Text="Create" />
 &nbsp;</div>
                            
                         </div>
@@ -210,7 +213,7 @@
             </div>
 
         </div>
-
+    </div>
 
         <footer>
 

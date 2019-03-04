@@ -6,20 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SolutionX.DataAccess;
-using SolutionX.DomainEntities;
 using System.Web;
 
 
 namespace SolutionX.BussinesLayer
 {
-    public class ticketBussines
+    public class TicketBussines
     {
         TicketDataAccess ticketData = new TicketDataAccess();
         List<Ticket> ticketsList = new List<Ticket>();
 
-        public void CreateTicket(Ticket ticket)
+        public string CreateTicket(Ticket ticket)
         {
-            ticketData.CreateTicket(ticket);
+            return ticketData.CreateTicket(ticket);
         }
         public List<Ticket> ViewTicket()
         {

@@ -9,15 +9,14 @@ using SolutionX.DomainEntities;
 
 namespace SolutionX
 {
-    public partial class viewClient : System.Web.UI.Page
+    public partial class ViewClient : System.Web.UI.Page
     {
-        ticketBussines ticketBussines = new ticketBussines();
-        CustomerBussines customerBussines = new CustomerBussines();
-        Ticket ticket = new Ticket();
-        Customer customer;
+        TicketBussines ticketBussines = new TicketBussines();
+        CustomerBussines customerBussines = new CustomerBussines();        
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            lblName.Text = Session["Name"].ToString() + " "+ Session["LastName"].ToString();
         }
         protected void ButtonSaveRequest(object sender, EventArgs e)
         {
@@ -38,20 +37,24 @@ namespace SolutionX
         }
 
         protected void Button1_Click(object sender, EventArgs e)
-        {
-            //string user =HttpContext.Current.Session["userName"].ToString();
-            //string pas = HttpContext.Current.Session["password"].ToString();
-            LoginUser login = new LoginUser();
-            
-            customer = new Customer();
-            customer.nickName = login.userLogin;
-            customer.pass = login.passwordLogin;
-
-            customer = customerBussines.returnCustomer(customer);
-
-            ticket.description = txDesc.Value;
-            ticket.idCustomer = customer.id;
-            ticketBussines.CreateTicket(ticket);
+        {          
+            Ticket ticket = new Ticket()
+            {
+                description = txDesc.Value,
+                idCustomer = int.Parse(Session["id"].ToString())
+            };
+            string textInfo = ticketBussines.CreateTicket(ticket);
+            if(textInfo== "success")
+            {
+                lblAnswer.CssClass = "alert alert-success";
+                lblAnswer.Text = "Your request was registered";
+                txDesc.Value = "";
+            }
+            else
+            {
+                lblAnswer.CssClass = "alert alert-danger";
+                lblAnswer.Text = textInfo.ToString();
+            }
         }
     }
 }

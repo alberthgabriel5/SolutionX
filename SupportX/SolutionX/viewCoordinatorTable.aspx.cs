@@ -6,19 +6,19 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SolutionX.DomainEntities;
 using SolutionX.BussinesLayer;
-using System.Web.UI.WebControls;
+
 using System.Data;
 
 namespace SolutionX
 {
-    public partial class viewCoordinator : System.Web.UI.Page
+    public partial class viewCoordinator 
     {
         Category category = new Category();
         Ticket ticket = new Ticket();
         CategoryBussines categoryBussines = new CategoryBussines();
         Priority prioritys = new Priority();
         PriorityBussines priorityBussines = new PriorityBussines();
-        ticketBussines TicketBussines = new ticketBussines();
+        TicketBussines TicketBussines = new TicketBussines();
         DropDownList listC = new DropDownList();
         DropDownList listP = new DropDownList();
         Button button = new Button();
@@ -98,7 +98,7 @@ namespace SolutionX
                 button.Text = "Save";
                 button.Enabled = true;
                 button.FindControl("Code");
-                button.Click += new System.EventHandler(save);
+                button.Click += new System.EventHandler(Save);
                 button.ForeColor = System.Drawing.Color.Silver;
                 button.Font.Size = 9;
                 button.BackColor = System.Drawing.Color.Blue;
@@ -154,7 +154,7 @@ namespace SolutionX
 
         }
 
-        protected void save(object sender, EventArgs e)
+        protected void Save(object sender, EventArgs e)
         {
             string s = customers.AccessKey.ToString();
 
